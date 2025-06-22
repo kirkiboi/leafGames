@@ -84,7 +84,6 @@ section {
     font-size: 1.5em;
     font-weight: bold;
 }
-
 .divider {
     border: none;
     height: 1px;
@@ -93,9 +92,7 @@ section {
     width: 80%;
     opacity: 0.3;
 }
-
 /* ABOUT US SECTION */
-
 .about-us-section{
     position: relative;
     padding: 1em;
@@ -126,9 +123,7 @@ section {
     position: absolute;
     transform: translate(0%, 40%) ;
 }
-
 /* GAMES SECTION */
-
 .games-section {
     text-align: center;
     padding: 2em 0;
@@ -167,29 +162,24 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-   
 .game-card:last-child {
     margin-right: 2em;
 }
-
 .emilynsSmallFarm {
     background-image: url(images/emilynsSmallFarm.png);
     background-size: cover;
     background-position: center;
 }
-
 .cottonsOdyssey {
     background-image: url(images/cottonsOdysseyInTheFirstAvenueForest.png);
     background-size: cover;
     background-position: center;
 }
-
 .intoTheForest {
     background-image: url(images/intoTheForest.png);
     background-size: cover;
     background-position: center;
 }
-
 .growAShop {
     background-image: url(images/growAShop.png);
     background-size: cover;
@@ -209,13 +199,10 @@ section {
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
-
 .game-card:hover::after {
     transform: translateY(0);
 }
-
 /* NEWS SECTION */
-
 .news-section{
     padding: 1em;
 }
@@ -246,9 +233,7 @@ section {
 .growAShopNews:hover .bg-overlay,
 .emilynsSmallFarmNews:hover .bg-overlay {
     background-color: rgba(0, 0, 0, 0.8);
-    
 }
-
 .intoTheForestNews{
     background-image: url(images/intoTheForest.png);
 }
@@ -265,13 +250,11 @@ section {
     background-color: rgba(0, 0, 0, 0.5); /* black overlay with 40% opacity */
     z-index: 0;
 }
-
 .news-title-div,
 .news-news-div {
     position: relative;
     z-index: 1;
 }
-
 /* PLAYER REVIEW SECTION */
 .player-review-section{
     text-align: center;
@@ -297,11 +280,7 @@ section {
     border: solid 1px yellow;
     width:100%;
 }
-
-
-
 /* CONTACT SECTION */
-
 .partnership-contact {
     display: flex;
     justify-content: center; /* centers the whole footer */
@@ -312,7 +291,6 @@ section {
     margin-top: 12em;
     background: rgb(2, 2, 44);
 }
-
 .partnership-contact div {
     display: flex;
     flex-direction: column;
@@ -322,7 +300,6 @@ section {
 .footer-message{
     font-size: 1.5em;
 }
-
 .partnership-contact i {
     margin-right: 0.5em;
     font-size: 1.3em;
@@ -332,4 +309,3 @@ section {
     text-decoration: none;
     color: white;
 }
-
