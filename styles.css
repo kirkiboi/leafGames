@@ -1,0 +1,335 @@
+@import url('https://fonts.cdnfonts.com/css/recoleta');
+html {
+    scroll-behavior: smooth;
+}
+* {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
+    font-family: 'Recoleta', sans-serif;
+}             
+body{
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 8em;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: black;
+}
+section {
+    scroll-margin-top: 100px;
+}
+.header-brand{
+    height: 100px;
+    width: 300px;
+    background-image: url(images/leaf\ games\ logo\ -\ header.png);
+    background-size: cover;
+    background-position: center;
+}
+.header-navigations{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+.header-navigations a{
+    text-decoration: none;
+    padding: 0.2em;
+    font-size: 1.2em;
+    transition: color 0.2s;
+}
+.header-navigations a:hover,
+.header-login button:hover{
+    text-decoration: underline;
+    color: yellow;
+    cursor: pointer;
+}
+.header-login button{
+    background-color: black;
+    color: white;
+    border: solid 0.1em yellow;
+    border-radius: 2px;
+    padding: 0.3em;
+    font-size: 1.2em;
+}
+.what-is-leaf-games{
+    position: relative;
+    text-align: center;
+}
+.section-logo{
+    margin: 0 auto;
+    height: 500px;
+    width: 500px;
+    background-image: url(images/leaf\ games\ logo\ -\ about.png);
+    display: block;
+}
+.span-Games{
+    color: yellow;
+    font-size: 3em;
+}
+.section-message{
+    width: 13em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(70%, -60%);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin: 3em auto;
+    width: 80%;
+    opacity: 0.3;
+}
+
+/* ABOUT US SECTION */
+
+.about-us-section{
+    position: relative;
+    padding: 1em;
+    margin-bottom: 10em;
+}
+.about-us-section h1{
+    font-size: 3em;
+}
+.about-us-section p{
+    font-size: 1.5em;
+}
+.about-us-section-first-p{
+    width: 15em;
+}
+.about-us-image{
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -45%);
+    background-image: url(images/aboutUsStartGame.png);
+    width: 800px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+.about-us-section-second-p{
+    position: absolute;
+    transform: translate(0%, 40%) ;
+}
+
+/* GAMES SECTION */
+
+.games-section {
+    text-align: center;
+    padding: 2em 0;
+}
+.games-section h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+    color: white
+}
+.games-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 1em 2em;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.games-container::-webkit-scrollbar {
+    display: none;
+}
+.game-card {
+    display: inline-block;
+    width: 350px;
+    height: 350px;
+    border-radius: 12px;
+    margin-right: 3em;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+   
+.game-card:last-child {
+    margin-right: 2em;
+}
+
+.emilynsSmallFarm {
+    background-image: url(images/emilynsSmallFarm.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.cottonsOdyssey {
+    background-image: url(images/cottonsOdysseyInTheFirstAvenueForest.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.intoTheForest {
+    background-image: url(images/intoTheForest.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.growAShop {
+    background-image: url(images/growAShop.png);
+    background-size: cover;
+    background-position: center;
+}
+.game-card::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover::after {
+    transform: translateY(0);
+}
+
+/* NEWS SECTION */
+
+.news-section{
+    padding: 1em;
+}
+.news-section h1{
+    text-align: center;
+    padding: 2.5em;
+}
+.news-div{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+.news-div-wrapper{
+    border: solid 1px;
+    padding: 0.5em;
+    border-radius: 3px;
+}
+.intoTheForestNews,
+.growAShopNews,
+.emilynsSmallFarmNews {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 3px;
+}
+.intoTheForestNews:hover .bg-overlay,
+.growAShopNews:hover .bg-overlay,
+.emilynsSmallFarmNews:hover .bg-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.intoTheForestNews{
+    background-image: url(images/intoTheForest.png);
+}
+.growAShopNews{
+    background-image: url(images/growAShopUpdated.png);
+}
+.emilynsSmallFarmNews{
+    background-image: url(images/emilynSmallFarmNewCharacter.png);
+}
+.bg-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* black overlay with 40% opacity */
+    z-index: 0;
+}
+
+.news-title-div,
+.news-news-div {
+    position: relative;
+    z-index: 1;
+}
+
+/* PLAYER REVIEW SECTION */
+.player-review-section{
+    text-align: center;
+}
+.player-review-section h1{
+    margin-bottom: 2em;
+}
+.player-review-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.player-review-image-holder{
+    width: 30em;
+    margin-right: 1em;
+    transition: all 1s;
+}
+.player-review-image-holder:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.player-review-image-holder img{
+    border-radius: 2.5em;
+    border: solid 1px yellow;
+    width:100%;
+}
+
+
+
+/* CONTACT SECTION */
+
+.partnership-contact {
+    display: flex;
+    justify-content: center; /* centers the whole footer */
+    gap: 5em;
+    align-items: flex-start; /* aligns top edges of both columns */
+    flex-wrap: wrap;
+    padding: 1.5em;
+    margin-top: 12em;
+    background: rgb(2, 2, 44);
+}
+
+.partnership-contact div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* aligns text left in each column */
+    min-width: 200px;
+}
+.footer-message{
+    font-size: 1.5em;
+}
+
+.partnership-contact i {
+    margin-right: 0.5em;
+    font-size: 1.3em;
+    margin-top: 1em;
+}
+.partnership-contact a{
+    text-decoration: none;
+    color: white;
+}
+
