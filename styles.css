@@ -1,311 +1,470 @@
-@import url('https://fonts.cdnfonts.com/css/recoleta');
+:root {
+    --bg: #000000;
+    --surface: #0d0d1f;
+    --surface-strong: #12122b;
+    --text: #ffffff;
+    --muted: #d9d9e0;
+    --accent: #ffda24;
+    --border: rgba(255, 255, 255, 0.15);
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --transition: 0.22s ease;
+    --max-content-width: 1200px;
+    --nav-gap: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
-* {
-    font-variant-ligatures: none;
-    font-feature-settings: "liga" 0;
+
+body {
+    margin: 0;
+    min-height: 100vh;
     font-family: 'Recoleta', sans-serif;
-}             
-body{
-    background-color: black;
-    color: white;
-    overflow-x: hidden;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
 }
-header{
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    gap: 8em;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: black;
+
+a,
+button {
+    color: inherit;
+    font: inherit;
 }
-section {
-    scroll-margin-top: 100px;
-}
-.header-brand{
-    height: 100px;
-    width: 300px;
-    background-image: url(images/leaf\ games\ logo\ -\ header.png);
-    background-size: cover;
-    background-position: center;
-}
-.header-navigations{
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 5em;
-}
-.header-navigations a{
+
+a {
     text-decoration: none;
-    padding: 0.2em;
-    font-size: 1.2em;
-    transition: color 0.2s;
 }
-.header-navigations a:hover,
-.header-login button:hover{
-    text-decoration: underline;
-    color: yellow;
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    background: none;
     cursor: pointer;
 }
-.header-login button{
-    background-color: black;
-    color: white;
-    border: solid 0.1em yellow;
-    border-radius: 2px;
-    padding: 0.3em;
-    font-size: 1.2em;
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
 }
-.what-is-leaf-games{
-    position: relative;
-    text-align: center;
-}
-.section-logo{
-    margin: 0 auto;
-    height: 500px;
-    width: 500px;
-    background-image: url(images/leaf\ games\ logo\ -\ about.png);
-    display: block;
-}
-.span-Games{
-    color: yellow;
-    font-size: 3em;
-}
-.section-message{
-    width: 13em;
+
+.visually-hidden {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(70%, -60%);
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.header-brand {
+    width: 180px;
+    height: 56px;
+    background-image: url("images/leaf games logo - header.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.header-navigations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--nav-gap);
+}
+
+.header-navigations a {
+    padding: 0.4rem 0.15rem;
+    font-size: 1rem;
+    transition: color var(--transition);
+}
+
+.header-navigations a:hover,
+.header-navigations a:focus-visible {
+    color: var(--accent);
+}
+
+.header-actions button {
+    padding: 0.65rem 1.1rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text);
+    transition: background var(--transition), color var(--transition);
+}
+
+.header-actions button:hover,
+.header-actions button:focus-visible {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+main {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 3rem;
+}
+
+.hero {
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hero-brand-image {
+    width: min(460px, 100%);
+    aspect-ratio: 1 / 1;
+    background-image: url("images/leaf games logo - about.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.hero h1 {
+    margin: 0.5rem 0 1rem;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    letter-spacing: -0.05em;
+}
+
+.hero-description {
+    max-width: 42rem;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
 .divider {
     border: none;
     height: 1px;
-    background-color: white;
-    margin: 3em auto;
-    width: 80%;
-    opacity: 0.3;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 3rem auto;
+    width: clamp(60%, 800px, 90%);
 }
-/* ABOUT US SECTION */
-.about-us-section{
-    position: relative;
-    padding: 1em;
-    margin-bottom: 10em;
-}
-.about-us-section h1{
-    font-size: 3em;
-}
-.about-us-section p{
-    font-size: 1.5em;
-}
-.about-us-section-first-p{
-    width: 15em;
-}
-.about-us-image{
-    border-radius: 12px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-25%, -45%);
-    background-image: url(images/aboutUsStartGame.png);
-    width: 800px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-}
-.about-us-section-second-p{
-    position: absolute;
-    transform: translate(0%, 40%) ;
-}
-/* GAMES SECTION */
-.games-section {
+
+.section-header {
+    max-width: 780px;
+    margin: 0 auto 2rem;
     text-align: center;
-    padding: 2em 0;
 }
-.games-section h1 {
-    font-size: 3em;
-    margin-bottom: 1em;
-    color: white
+
+.section-header h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
-.games-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding: 1em 2em;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+
+.section-header p {
+    margin: 0;
+    color: var(--muted);
 }
-.games-container::-webkit-scrollbar {
-    display: none;
+
+.about-us-section {
+    padding: 2rem 0;
 }
-.game-card {
-    display: inline-block;
-    width: 350px;
-    height: 350px;
-    border-radius: 12px;
-    margin-right: 3em;
+
+.about-us-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-copy p {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.about-us-image {
+    min-height: 340px;
+    border-radius: var(--radius);
+    background-image: url("images/aboutUsStartGame.png");
     background-size: cover;
     background-position: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+}
+
+.games-section {
+    padding: 2rem 0;
+}
+
+.games-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.game-card {
+    min-height: 260px;
+    border-radius: var(--radius);
     position: relative;
     overflow: hidden;
-}
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.game-card:last-child {
-    margin-right: 2em;
-}
-.emilynsSmallFarm {
-    background-image: url(images/emilynsSmallFarm.png);
     background-size: cover;
     background-position: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
-.cottonsOdyssey {
-    background-image: url(images/cottonsOdysseyInTheFirstAvenueForest.png);
-    background-size: cover;
-    background-position: center;
+
+.game-card:hover,
+.game-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
 }
-.intoTheForest {
-    background-image: url(images/intoTheForest.png);
-    background-size: cover;
-    background-position: center;
-}
-.growAShop {
-    background-image: url(images/growAShop.png);
-    background-size: cover;
-    background-position: center;
-}
-.game-card::after {
-    content: attr(data-title);
+
+.game-card h3 {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 1em;
-    font-size: 1.2em;
-    font-weight: bold;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    bottom: 0;
+    margin: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.65);
+    color: var(--text);
+    font-size: 1.1rem;
 }
-.game-card:hover::after {
-    transform: translateY(0);
+
+.emilynsSmallFarm {
+    background-image: url("images/emilynsSmallFarm.png");
 }
-/* NEWS SECTION */
-.news-section{
-    padding: 1em;
+
+.cottonsOdyssey {
+    background-image: url("images/cottonsOdysseyInTheFirstAvenueForest.png");
 }
-.news-section h1{
-    text-align: center;
-    padding: 2.5em;
+
+.intoTheForest {
+    background-image: url("images/intoTheForest.png");
 }
-.news-div{
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
+
+.growAShop {
+    background-image: url("images/growAShop.png");
 }
-.news-div-wrapper{
-    border: solid 1px;
-    padding: 0.5em;
-    border-radius: 3px;
+
+.news-section {
+    padding: 2rem 0;
 }
-.intoTheForestNews,
-.growAShopNews,
-.emilynsSmallFarmNews {
+
+.news-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.news-card {
     position: relative;
+    min-height: 260px;
+    border-radius: var(--radius);
+    overflow: hidden;
     background-size: cover;
     background-position: center;
-    padding: 2rem;
-    border-radius: 3px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
-.intoTheForestNews:hover .bg-overlay,
-.growAShopNews:hover .bg-overlay,
-.emilynsSmallFarmNews:hover .bg-overlay {
-    background-color: rgba(0, 0, 0, 0.8);
+
+.news-card:hover .bg-overlay,
+.news-card:focus-within .bg-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
 }
-.intoTheForestNews{
-    background-image: url(images/intoTheForest.png);
-}
-.growAShopNews{
-    background-image: url(images/growAShopUpdated.png);
-}
-.emilynsSmallFarmNews{
-    background-image: url(images/emilynSmallFarmNewCharacter.png);
-}
-.bg-overlay {
+
+.news-card .bg-overlay {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* black overlay with 40% opacity */
-    z-index: 0;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    transition: background var(--transition);
 }
-.news-title-div,
-.news-news-div {
+
+.news-content {
     position: relative;
     z-index: 1;
-}
-/* PLAYER REVIEW SECTION */
-.player-review-section{
-    text-align: center;
-}
-.player-review-section h1{
-    margin-bottom: 2em;
-}
-.player-review-wrapper{
-    display: flex;
-    flex-direction: row;
-}
-.player-review-image-holder{
-    width: 30em;
-    margin-right: 1em;
-    transition: all 1s;
-}
-.player-review-image-holder:hover{
-    transform: scale(1.5);
-    cursor: pointer;
-}
-.player-review-image-holder img{
-    border-radius: 2.5em;
-    border: solid 1px yellow;
-    width:100%;
-}
-/* CONTACT SECTION */
-.partnership-contact {
-    display: flex;
-    justify-content: center; /* centers the whole footer */
-    gap: 5em;
-    align-items: flex-start; /* aligns top edges of both columns */
-    flex-wrap: wrap;
-    padding: 1.5em;
-    margin-top: 12em;
-    background: rgb(2, 2, 44);
-}
-.partnership-contact div {
+    height: 100%;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* aligns text left in each column */
-    min-width: 200px;
+    justify-content: flex-end;
 }
-.footer-message{
-    font-size: 1.5em;
+
+.news-content h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.4rem;
 }
-.partnership-contact i {
-    margin-right: 0.5em;
-    font-size: 1.3em;
-    margin-top: 1em;
+
+.news-content p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
 }
-.partnership-contact a{
-    text-decoration: none;
-    color: white;
+
+.intoTheForestNews {
+    background-image: url("images/intoTheForest.png");
+}
+
+.growAShopNews {
+    background-image: url("images/growAShopUpdated.png");
+}
+
+.emilynsSmallFarmNews {
+    background-image: url("images/emilynSmallFarmNewCharacter.png");
+}
+
+.player-review-section {
+    padding: 2rem 0;
+}
+
+.player-review-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.player-review-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.player-review-item:hover,
+.player-review-item:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+}
+
+.player-review-item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+}
+
+.site-footer {
+    background: #02022c;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.footer-grid {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-heading {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.footer-contacts,
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.footer-contacts p,
+.footer-socials a {
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.footer-contacts p {
+    margin: 0;
+}
+
+.footer-contacts p:hover,
+.footer-socials a:hover {
+    color: var(--accent);
+}
+
+footer i,
+.footer-socials i {
+    width: 1.25rem;
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        align-items: center;
+    }
+
+    .hero-brand-image {
+        order: 2;
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .hero-copy {
+        max-width: 29rem;
+    }
+
+    .about-us-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .header-navigations {
+        justify-content: center;
+    }
+
+    .header-actions {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 1.75rem;
+    }
+
+    .news-content {
+        padding: 1.5rem;
+    }
 }
